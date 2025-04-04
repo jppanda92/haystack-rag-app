@@ -154,19 +154,19 @@ echo -e "${YELLOW}Building and pushing application images...${NC}"
 
 # Build and push frontend image
 echo -e "${YELLOW}Building frontend image...${NC}"
-docker build -t ${REGISTRY_KUBE}/hra-frontend:latest -f frontend/Dockerfile.frontend frontend/
+docker build -t ${REGISTRY_KUBE}/hra-frontend:latest -f ../frontend/Dockerfile.frontend ../frontend/
 echo -e "${GREEN}Pushing frontend image to Minikube registry...${NC}"
 docker push ${REGISTRY_KUBE}/hra-frontend:latest
 
 # Build and push indexing service image
 echo -e "${YELLOW}Building indexing service image...${NC}"
-docker build -t ${REGISTRY_KUBE}/hra-indexing:latest -f backend/Dockerfile.indexing backend/
+docker build -t ${REGISTRY_KUBE}/hra-indexing:latest -f ../backend/Dockerfile.indexing ../backend/
 echo -e "${GREEN}Pushing indexing service image to Minikube registry...${NC}"
 docker push ${REGISTRY_KUBE}/hra-indexing:latest
 
 # Build and push query service image
 echo -e "${YELLOW}Building query service image...${NC}"
-docker build -t ${REGISTRY_KUBE}/hra-query:latest -f backend/Dockerfile.query backend/
+docker build -t ${REGISTRY_KUBE}/hra-query:latest -f ../backend/Dockerfile.query ../backend/
 echo -e "${GREEN}Pushing query service image to Minikube registry...${NC}"
 docker push ${REGISTRY_KUBE}/hra-query:latest
 
